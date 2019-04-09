@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Excluir Cliente
+{% endblock %}
+
+{% block content %}
+<div class='card'>
+    <div class="card-header">
+        Deseja excluir esse Cliente?
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">Nome: {{cliente.nome}}</h5>
+        <h5 class="card-title">Sexo: {{cliente.sexo}}</h5>
+        <h5 class="card-title">Data de Nascimento: {{cliente.date}}</h5>
+        <h5 class="card-title">E-mail: {{cliente.email}}</h5>
+        <h5 class="card-title">Profissão: {{cliente.profissao}}</h5>
+        <form method= 'post'>
+            {%csrf_token%} 
+            <button class="btn btn-danger" type="submit">Remover</button>
+            <a href="{{request.META.HTTP_REFERER}}" class="btn btn-primary">Voltar</a> <!--Volta para a página anterior-->
+        </form>
+        </div>
+</div>
+{% endblock content %}
